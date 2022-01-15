@@ -12,8 +12,7 @@ class MongoDBPipleline(object):
         self.Follows = db["Follows"]
         self.Fans = db["Fans"]
 
-    def process_item(self, item, spider):
-        """ 判断item的类型，并作相应的处理，再入数据库 """
+    def process_item(self, item, spider)：
         if isinstance(item, InformationItem):
             try:
                 self.Information.insert(dict(item))
