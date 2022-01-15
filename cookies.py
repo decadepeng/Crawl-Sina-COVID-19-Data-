@@ -20,11 +20,7 @@ dcap["phantomjs.page.settings.userAgent"] = (
 logger = logging.getLogger(__name__)
 logging.getLogger("selenium").setLevel(logging.WARNING) 
 
-"""
-输入你的微博账号和密码，可去淘宝买。
-建议买几十个，微博限制的严，太频繁了会出现302转移。
-或者你也可以把时间间隔调大点。
-"""
+
 myWeiBo = [
     {'no': 'jiadieyuso3319@163.com', 'psw': 'a123456'},
     {'no': 'shudieful3618@163.com', 'psw': 'a123456'},
@@ -73,7 +69,7 @@ def get_cookie_from_login_sina_com_cn(account, password):
 
 
 def get_cookie_from_weibo_cn(account, password):
-    """ 获取一个账号的Cookie """
+
     try:
         browser = webdriver.PhantomJS(desired_capabilities=dcap)
         browser.get("https://weibo.cn/login/")
@@ -134,7 +130,7 @@ def get_cookie_from_weibo_cn(account, password):
 
 
 def getCookies(weibo):
-    """ 获取Cookies """
+ 
     cookies = []
     for elem in weibo:
         account = elem['no']
