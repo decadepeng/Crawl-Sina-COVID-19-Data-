@@ -1,25 +1,15 @@
 # encoding=utf-8
 import httplib, mimetypes, urlparse, json, time
 
-# 用户名
+
 username = ''
-
-# 密码
 password = ''
-
-# 软件ＩＤ，开发者分成必要参数。登录开发者后台【我的软件】获得！
 appid = 1
-
-# 软件密钥，开发者分成必要参数。登录开发者后台【我的软件】获得！
 appkey = '22cc5376925e9387a23cf797cb9ba745'
-
-# 图片文件
 filename = 'ab.png'
-
-# 验证码类型，# 例：1004表示4位字母数字，不同类型收费不同。请准确填写，否则影响识别率。在此查询所有类型 http://www.yundama.com/price.html
 codetype = 1004
 
-# 超时时间，秒
+
 timeout = 60
 
 
