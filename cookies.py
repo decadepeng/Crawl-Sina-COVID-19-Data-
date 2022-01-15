@@ -11,15 +11,14 @@ from yumdama import identify
 
 reload(sys)
 sys.setdefaultencoding('utf8')
-IDENTIFY = 1  # 验证码输入方式:        1:看截图aa.png，手动输入     2:云打码
-COOKIE_GETWAY = 0 # 0 代表从https://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18) 获取cookie   # 1 代表从https://weibo.cn/login/获取Cookie
-dcap = dict(DesiredCapabilities.PHANTOMJS)  # PhantomJS需要使用老版手机的user-agent，不然验证码会无法通过
+IDENTIFY = 1 
+COOKIE_GETWAY = 0 # 0 
+dcap = dict(DesiredCapabilities.PHANTOMJS)  
 dcap["phantomjs.page.settings.userAgent"] = (
     "Mozilla/5.0 (Linux; U; Android 2.3.6; en-us; Nexus S Build/GRK39F) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
 )
 logger = logging.getLogger(__name__)
-logging.getLogger("selenium").setLevel(logging.WARNING)  # 将selenium的日志级别设成WARNING，太烦人
-
+logging.getLogger("selenium").setLevel(logging.WARNING) 
 
 """
 输入你的微博账号和密码，可去淘宝买。
@@ -40,7 +39,6 @@ def getCookie(account, password):
         logger.error("COOKIE_GETWAY Error!")
 
 def get_cookie_from_login_sina_com_cn(account, password):
-    """ 获取一个账号的Cookie """
     loginURL = "https://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18)"
     username = base64.b64encode(account.encode("utf-8")).decode("utf-8")
     postData = {
