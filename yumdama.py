@@ -151,18 +151,18 @@ def identify():
     if (username == 'username'):
         print '请设置好相关参数再测试'
     else:
-        # 初始化
+     
         yundama = YDMHttp(username, password, appid, appkey)
 
-        # 登陆云打码
+        
         uid = yundama.login();
         # print 'uid: %s' % uid
 
-        # 查询余额
+       
         balance = yundama.balance();
         # print 'balance: %s' % balance
 
-        # 开始识别，图片路径，验证码类型ID，超时时间（秒），识别结果
+        
         cid, result = yundama.decode(filename, codetype, timeout);
         # print 'cid: %s, result: %s' % (cid, result)
         return result
